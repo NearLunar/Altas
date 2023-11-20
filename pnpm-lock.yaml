@@ -8,15 +8,15 @@ importers:
 
   .:
     devDependencies:
+      '@altas/tsconfig':
+        specifier: workspace:*
+        version: link:packages/tsconfig
       eslint:
         specifier: ^8.48.0
         version: 8.48.0
       prettier:
         specifier: ^3.0.3
         version: 3.0.3
-      tsconfig:
-        specifier: workspace:*
-        version: link:packages/tsconfig
       turbo:
         specifier: latest
         version: 1.10.16
@@ -36,6 +36,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@altas/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       '@next/eslint-plugin-next':
         specifier: ^13.4.19
         version: 13.4.19
@@ -51,9 +54,6 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -73,6 +73,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@altas/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       '@next/eslint-plugin-next':
         specifier: ^13.4.19
         version: 13.4.19
@@ -88,9 +91,6 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -111,6 +111,9 @@ importers:
 
   packages/ui:
     devDependencies:
+      '@altas/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@turbo/gen':
         specifier: ^1.10.12
         version: 1.10.12(@types/node@20.5.2)(typescript@5.2.2)
@@ -129,9 +132,6 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
