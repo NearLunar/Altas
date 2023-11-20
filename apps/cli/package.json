@@ -1,0 +1,21 @@
+{
+    "name": "@altas/cli",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "tsup build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "commander": "11.1.0"
+    },
+    "devDependencies": {
+        "@next/eslint-plugin-next": "^13.4.19",
+        "@types/node": "^17.0.12",
+        "@altas/lint": "workspace:*",
+        "@altas/tsconfig": "workspace:*",
+        "typescript": "^5.2.2"
+    }
+}

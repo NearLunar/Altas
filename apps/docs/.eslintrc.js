@@ -1,3 +1,4 @@
 module.exports = {
-  extends: ["custom/next"],
+    root: true,
+    extends: [require.resolve("@altas/lint/next")],
 };

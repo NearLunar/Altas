@@ -1,5 +1,5 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
     root: true,
-    extends: [require.resolve("@altas/lint/react-internal")],
+    extends: [require.resolve("./node.js")],
 };

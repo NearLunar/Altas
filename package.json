@@ -10,8 +10,9 @@
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
     "@altas/tsconfig": "workspace:*",
+    "@altas/lint": "workspace:*",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.9.0",
-  "name": "@atlas/root"
+  "name": "@altas/root"
 }

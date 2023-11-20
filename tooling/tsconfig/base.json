@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Default",
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "target": "es2022",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "Bundler",
+        "module": "es2015",
+        "noEmit": true,
+        "lib": ["es2022", "dom", "dom.iterable"],
+        "outDir": "dist"
+    },
+    "exclude": ["node_modules"]
+}
