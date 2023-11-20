@@ -1,5 +1,5 @@
 {
     "extends": "@altas/tsconfig/react-library.json",
-    "include": ["src"],
+    "include": ["src", "turbo"],
     "exclude": ["dist", "build", "node_modules"]
 }

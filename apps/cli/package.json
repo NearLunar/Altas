@@ -6,14 +6,17 @@
         "dev": "next dev",
         "build": "tsup build",
         "start": "next start",
-        "lint": "next lint"
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+        "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+        "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
+        "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn"
     },
     "dependencies": {
         "commander": "11.1.0"
     },
     "devDependencies": {
-        "@next/eslint-plugin-next": "^13.4.19",
-        "@types/node": "^17.0.12",
+        "@types/node": "^20.9.2",
         "@altas/lint": "workspace:*",
         "@altas/tsconfig": "workspace:*",
         "typescript": "^5.2.2"

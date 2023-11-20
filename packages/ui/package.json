@@ -1,21 +1,25 @@
 {
-  "name": "@altas/ui",
-  "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
-  "license": "MIT",
-  "scripts": {
-    "lint": "eslint .",
-    "generate:component": "turbo gen react-component"
-  },
-  "devDependencies": {
-    "@turbo/gen": "^1.10.12",
-    "@types/node": "^20.5.2",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@altas/lint": "workspace:*",
-    "react": "^18.2.0",
-    "@altas/tsconfig": "workspace:*",
-    "typescript": "^5.2.2"
-  }
+    "name": "@altas/ui",
+    "version": "0.0.0",
+    "main": "./src/index.tsx",
+    "types": "./src/index.tsx",
+    "license": "MIT",
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+        "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+        "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
+        "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+        "generate:component": "turbo gen react-component"
+    },
+    "devDependencies": {
+        "@turbo/gen": "^1.10.16",
+        "@types/node": "^20.9.2",
+        "@types/react": "^18.2.37",
+        "@types/react-dom": "^18.2.15",
+        "@altas/lint": "workspace:*",
+        "react": "^18.2.0",
+        "@altas/tsconfig": "workspace:*",
+        "typescript": "^5.2.2"
+    }
 }

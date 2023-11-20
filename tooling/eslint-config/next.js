@@ -17,6 +17,14 @@ const config = {
         JSX: true,
     },
     ignorePatterns: ["**/.next/**"],
+    overrides: [
+        {
+            files: ["*.ts", "**/{layout,page}.tsx"],
+            rules: {
+                "import/no-default-export": "off",
+            },
+        },
+    ],
     root: true,
 };
 

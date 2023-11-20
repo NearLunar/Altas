@@ -1,14 +1,14 @@
 {
-  "name": "@altas/tsconfig",
-  "version": "0.0.0",
-  "private": true,
-  "license": "MIT",
-  "files": [
-    "nextjs.json",
-    "node.json",
-    "react-internal.json"
-  ],
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@altas/tsconfig",
+    "version": "0.0.0",
+    "private": true,
+    "license": "MIT",
+    "files": [
+        "nextjs.json",
+        "node.json",
+        "react-internal.json"
+    ],
+    "publishConfig": {
+        "access": "public"
+    }
 }

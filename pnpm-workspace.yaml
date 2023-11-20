@@ -1,6 +1,6 @@
 packages:
-  - "apps/*"
-  - "packages/*"
-  - "core/*"
-  - "tooling/*"
-  - "infrastructure/"
+    - "apps/*"
+    - "packages/*"
+    - "core/*"
+    - "tooling/*"
+    - "infrastructure/"
