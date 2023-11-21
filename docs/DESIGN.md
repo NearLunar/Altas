@@ -9,6 +9,7 @@
 ├── apps/
 │   ├── web/ (NextJS)
 │   ├── cli/ (IDK yet)
+│   ├── docs/ (NextJS)
 │   ├── mobile/ (React Native)
 │   └── api/ (Fastify)
 ├── core/
@@ -30,6 +31,8 @@
 │       ├── driven/
 │       │   ├── adapter-provider-abusedb/
 │       │   ├── adapter-provider-talos/
+│       │   ├── adapter-messaging-slack/
+│       │   ├── adapter-messaging-smtp/
 │       │   ├── adapter-logger-console/
 │       │   └── adapter-logger-cloudwatch/
 │       └── driver/

@@ -19,5 +19,5 @@
         "incremental": true,
         "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
     },
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "tsup.config.ts"]
 }

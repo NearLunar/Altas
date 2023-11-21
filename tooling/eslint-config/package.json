@@ -6,7 +6,8 @@
     "files": [
         "node.js",
         "next.js",
-        "react-internal.js"
+        "react-internal.js",
+        "expo.js"
     ],
     "devDependencies": {
         "@vercel/style-guide": "latest",
