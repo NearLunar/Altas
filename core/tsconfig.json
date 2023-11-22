@@ -1,5 +1,5 @@
 {
     "extends": "@altas/tsconfig/node.json",
-    "include": ["src", "drizzle.config.ts"],
+    "include": ["src"],
     "exclude": ["node_modules", "dist"]
 }

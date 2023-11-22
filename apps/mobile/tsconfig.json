@@ -1,14 +1,12 @@
 {
-  "extends": "@altas/tsconfig/expo.json",
-  "include": [
-    "src",
-    "*.ts",
-    "index.tsx",
-    "*.js",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "extends": "@altas/tsconfig/expo.json",
+    "include": [
+        "src",
+        "*.ts",
+        "index.tsx",
+        "*.js",
+        ".expo/types/**/*.ts",
+        "expo-env.d.ts"
+    ],
+    "exclude": ["node_modules"]
 }

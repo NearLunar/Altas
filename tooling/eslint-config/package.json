@@ -15,6 +15,6 @@
         "eslint-config-turbo": "latest",
         "eslint-plugin-prettier": "latest",
         "lodash": "4.17.21",
-        "typescript": "^5.2.2"
+        "typescript": "^5.3.2"
     }
 }
