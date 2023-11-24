@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 import "@abraham/reflection";
+import type { LoggerPort } from "@altas/core";
 import { program } from "commander";
-import type { TestController } from "./controllers/test.controller";
 import { container } from "./controllers/test.controller";
 import { TYPES } from "./controllers/type";
 
-program.command("hello").action(async () => {
-    const testController = container.get<TestController>(TYPES.TestController);
+const logger = container.get<LoggerPort>(TYPES.LoggerPort);
 
-    await testController.execute("Hello World!");
-    await testController.execute("Hello World!");
+program.command("hello").action(() => {
+    logger.debug("Hello World!");
+    logger.info("Hello World!");
+    logger.warn("Hello World!");
+    logger.error("Hello World!");
+    logger.fatal("Hello World!");
 });
 
 program.parse(process.argv);
