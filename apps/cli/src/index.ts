@@ -6,7 +6,10 @@ import { container } from "./controllers/test.controller";
 import { TYPES } from "./controllers/type";
 
 program.command("hello").action(async () => {
-    await container.get<TestController>(TYPES.TestController).execute();
+    const testController = container.get<TestController>(TYPES.TestController);
+
+    await testController.execute("Hello World!");
+    await testController.execute("Hello World!");
 });
 
 program.parse(process.argv);

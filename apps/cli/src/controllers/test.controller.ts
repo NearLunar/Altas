@@ -4,7 +4,7 @@ import { Container, inject, injectable } from "inversify";
 import { TYPES } from "./type";
 
 interface TestControllerInterface {
-    execute: () => Promise<void>;
+    execute: (message: string) => Promise<void>;
 }
 
 @injectable()
@@ -14,9 +14,10 @@ export class TestController implements TestControllerInterface {
         private readonly logger: LoggerPort,
     ) {}
 
-    async execute(): Promise<void> {
-        await new Promise(() => {
-            this.logger.info("Hello World");
+    async execute(message: string): Promise<void> {
+        return new Promise((resolve) => {
+            this.logger.info(message);
+            resolve();
         });
     }
 }
