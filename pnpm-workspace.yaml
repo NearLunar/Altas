@@ -4,3 +4,4 @@ packages:
     - "core/"
     - "tooling/*"
     - "infrastructure/"
+    - "adapters/*"
