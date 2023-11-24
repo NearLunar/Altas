@@ -12,7 +12,7 @@ coverage
 .next/
 out/
 build
-dist/
+
 
 # misc
 .DS_Store
@@ -39,3 +39,6 @@ yarn-error.log*
 
 # Local DB
 local.db*
+
+# Build Artifact
+dist/
