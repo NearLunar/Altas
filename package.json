@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "postinstall": "husky install",
         "build": "turbo run build",
         "dev": "turbo run dev",
         "checks": "turbo lint format typecheck --continue",
@@ -11,10 +12,11 @@
         "format:fix": "prettier . \"!apps/** !packages/** !tooling/** !core/** !infrastructure/**\" --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn"
     },
     "devDependencies": {
-        "eslint": "latest",
-        "prettier": "latest",
-        "@altas/tsconfig": "workspace:*",
         "@altas/lint": "workspace:*",
+        "@altas/tsconfig": "workspace:*",
+        "eslint": "latest",
+        "husky": "^8.0.3",
+        "prettier": "latest",
         "turbo": "latest"
     },
     "packageManager": "pnpm@8.9.0",

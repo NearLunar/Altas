@@ -1,17 +1,36 @@
 import { ConsoleLogger } from "@altas/adapter-shared";
 import { LoggerPort } from "@altas/core";
-import { Container } from "inversify";
-import { TestController, TestControllerInterface } from "./controllers/test.controller";
+import { Container, injectable } from "inversify";
+import {
+    TestController,
+    TestControllerInterface,
+} from "./controllers/test.controller";
 import { TYPES } from "./controllers/type";
 
 const container = new Container();
 
-// container
-//     .bind<LoggerPort>(TYPES.LoggerPort)
-//     .toDynamicValue(() => new ConsoleLogger("cli.test-controller"));
+@injectable()
+class LoggerFactory {
+    public createLogger(context: string): LoggerPort {
+        return new ConsoleLogger(`cli.${context}`);
+    }
+}
+
+console.log("Registering bindings...");
+
+container.bind<LoggerFactory>(LoggerFactory).toSelf();
+
+container.bind<LoggerPort>(TYPES.LoggerPort).toDynamicValue(() => {
+    return new ConsoleLogger("default");
+});
 
 container
     .bind<TestControllerInterface>(TYPES.TestController)
-    .to(TestController);
+    .toDynamicValue(() => {
+        const logger = container
+            .get<LoggerFactory>(LoggerFactory)
+            .createLogger("test-controller");
+        return new TestController(logger);
+    });
 
 export { container };
