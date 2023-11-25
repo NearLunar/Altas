@@ -14,10 +14,10 @@
     "devDependencies": {
         "@altas/lint": "workspace:*",
         "@altas/tsconfig": "workspace:*",
-        "eslint": "latest",
-        "husky": "^8.0.3",
-        "prettier": "latest",
-        "turbo": "latest"
+        "eslint": "8.54.0",
+        "husky": "8.0.3",
+        "prettier": "3.1.0",
+        "turbo": "1.10.16"
     },
     "packageManager": "pnpm@8.9.0",
     "name": "@altas/root",

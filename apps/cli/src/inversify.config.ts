@@ -12,15 +12,17 @@ const container = new Container();
 @injectable()
 class LoggerFactory {
     public createLogger(context: string): LoggerPort {
-        return new ConsoleLogger(`cli.${context}`);
+        return new ConsoleLogger(`cli.${context}`);        
     }
 }
 
-console.log("Registering bindings...");
+
 
 container.bind<LoggerFactory>(LoggerFactory).toSelf();
 
 container.bind<LoggerPort>(TYPES.LoggerPort).toDynamicValue(() => {
+
+ 
     return new ConsoleLogger("default");
 });
 
@@ -32,5 +34,6 @@ container
             .createLogger("test-controller");
         return new TestController(logger);
     });
+
 
 export { container };
