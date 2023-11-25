@@ -31,7 +31,7 @@ module.exports = {
         project: "./tsconfig.json",
     },
 
-    ignorePatterns: ["node_modules", "dist/*", "*.config.*"],
+    ignorePatterns: ["node_modules", "dist", "*.config.*", ".next", ".turbo"],
 
     settings: {
         "import/resolver": {

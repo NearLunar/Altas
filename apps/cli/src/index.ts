@@ -3,7 +3,7 @@ import "@abraham/reflection";
 import { type LoggerPort } from "@altas/core";
 import { Argument, program } from "commander";
 import { TYPES } from "~/controllers/type";
-import { container } from "~/inversify.config";
+import { container } from "~/inversify";
 import type { TestControllerInterface } from "./controllers/test.controller";
 
 const logger = container.get<LoggerPort>(TYPES.LoggerPort);

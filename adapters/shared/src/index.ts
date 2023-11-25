@@ -1,1 +1,1 @@
-export * from "./console-logger.adapter";
+export * from "./logger-port/console-logger.adapter";
