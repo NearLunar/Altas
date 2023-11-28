@@ -19,6 +19,8 @@
     },
     "dependencies": {
         "@abraham/reflection": "^0.12.0",
-        "inversify": "^6.0.2"
+        "inversify": "^6.0.2",
+        "zod": "3.22.4",
+        "oxide.ts": "1.1.0"
     }
 }

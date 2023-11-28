@@ -1,4 +1,4 @@
 import "@abraham/reflection";
 
-export * from "./components";
-export * from "./shared";
+export * from "./bounded-contexts";
+export * from "./libs";
