@@ -17,7 +17,7 @@
         "lib": ["es2022", "dom", "dom.iterable"],
         "outDir": "dist",
         "incremental": true,
-        "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+        "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo.json",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     },
