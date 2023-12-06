@@ -8,8 +8,9 @@ module.exports = {
         "prettier/prettier": "error",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/sort-type-constituents": "warn",
-        "no-floating-decimal": "warn",
-        "no-console": "warn",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
         "turbo/no-undeclared-env-vars": [
             "error",
             {
