@@ -52,6 +52,28 @@ importers:
         specifier: ^5.3.2
         version: 5.3.2
 
+  adapters/trpc:
+    dependencies:
+      '@altas/core':
+        specifier: workspace:*
+        version: link:../../core
+      inversify:
+        specifier: ^6.0.2
+        version: 6.0.2
+    devDependencies:
+      '@altas/lint':
+        specifier: workspace:*
+        version: link:../../tooling/eslint-config
+      '@altas/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/tsconfig
+      '@types/node':
+        specifier: ^20.9.4
+        version: 20.9.4
+      typescript:
+        specifier: ^5.3.2
+        version: 5.3.2
+
   apps/api:
     devDependencies:
       '@altas/lint':
@@ -220,6 +242,12 @@ importers:
       inversify:
         specifier: ^6.0.2
         version: 6.0.2
+      oxide.ts:
+        specifier: 1.1.0
+        version: 1.1.0
+      zod:
+        specifier: 3.22.4
+        version: 3.22.4
     devDependencies:
       '@altas/lint':
         specifier: workspace:*
@@ -255,21 +283,6 @@ importers:
       drizzle-kit:
         specifier: 0.20.4
         version: 0.20.4
-      typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
-
-  packages/proto:
-    devDependencies:
-      '@altas/lint':
-        specifier: workspace:*
-        version: link:../../tooling/eslint-config
-      '@altas/tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/tsconfig
-      '@types/node':
-        specifier: ^20.9.4
-        version: 20.9.4
       typescript:
         specifier: ^5.3.2
         version: 5.3.2
@@ -9812,6 +9825,10 @@ packages:
       os-tmpdir: 1.0.2
     dev: false
 
+  /oxide.ts@1.1.0:
+    resolution: {integrity: sha512-+MkqFRQVHEe/x4/cJ6KuYz2m2VpnoBi7aKLbttGYTxmpNZalQ2RbKH2HxyfsTqXJhjh9DYxulPWfQV/hWMmzCg==}
+    dev: false
+
   /p-finally@1.0.0:
     resolution: {integrity: sha512-LICb2p9CB7FS+0eR1oqWnHhp0FljGLZCWBE9aix0Uye9W8LTQPwMTYVGWQWIw9RdQiDg4+epXQODwIYJtSJaow==}
     engines: {node: '>=4'}
@@ -12547,4 +12564,3 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
-    dev: true
