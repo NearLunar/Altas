@@ -1,32 +1,27 @@
 import { ConsoleLogger } from "@altas/adapter-shared";
-import type { LoggerPort } from "@altas/core";
-import { Container, injectable } from "inversify";
+import { DI_LOGGER_FACTORY } from "@altas/core";
+import type { LoggerFactory, LoggerPort } from "@altas/core";
+import type { interfaces } from "inversify";
+import { Container } from "inversify";
 import type { TestControllerInterface } from "./controllers/test.controller";
-import { TestController } from "./controllers/test.controller";
-import { TYPES } from "./controllers/type";
+import {
+    TestController,
+    TestControllerInterfaceDI,
+} from "./controllers/test.controller";
 
-const container = new Container();
+const container: interfaces.Container = new Container();
 
-@injectable()
-class LoggerFactory {
-    public createLogger(context: string): LoggerPort {
-        return new ConsoleLogger(`cli.${context}`);
-    }
-}
-
-container.bind<LoggerFactory>(LoggerFactory).toSelf();
-
-container.bind<LoggerPort>(TYPES.LoggerPort).toDynamicValue(() => {
-    return new ConsoleLogger("default");
-});
+// Logger Factory for ConsoleLogger
+container
+    .bind<LoggerFactory>(DI_LOGGER_FACTORY)
+    .toFactory<LoggerPort, [string]>(() => {
+        return (namespace: string) => {
+            return new ConsoleLogger(namespace);
+        };
+    });
 
 container
-    .bind<TestControllerInterface>(TYPES.TestController)
-    .toDynamicValue(() => {
-        const logger = container
-            .get<LoggerFactory>(LoggerFactory)
-            .createLogger("test-controller");
-        return new TestController(logger);
-    });
+    .bind<TestControllerInterface>(TestControllerInterfaceDI)
+    .to(TestController);
 
 export { container };
