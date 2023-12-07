@@ -1,3 +1,4 @@
+import { log } from "node:console";
 import { observable } from "@trpc/server/observable";
 import { z } from "zod";
 import { proceedure as procedure, router } from "./trpc";
@@ -9,10 +10,16 @@ export const appRouter = router({
         };
     }),
     randomNumber: procedure.subscription(() => {
+        log("Subscribed");
+
         return observable((a) => {
             setInterval(() => {
                 a.next(`Random number: ${Math.round(Math.random() * 1000000)}`);
             }, 100);
+
+            return () => {
+                log("Unsubscribed");
+            };
         });
     }),
     echo: procedure.input(z.string().ip()).query((a) => {
