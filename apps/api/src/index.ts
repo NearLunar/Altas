@@ -4,9 +4,15 @@ import ws from "@fastify/websocket";
 
 const server = fastify({
     maxParamLength: 5000,
+    logger: {
+        enabled: true,
+        transport: {
+            target: "pino-pretty",
+        },
+    },
 });
 
-void server.register(ws);
+void server.register(ws, {});
 
 void server.register(fastifyTRPCPlugin, {
     prefix: "/trpc",
