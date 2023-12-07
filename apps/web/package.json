@@ -1,17 +1,6 @@
 {
     "name": "@altas/web",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "typecheck": "tsc --noEmit",
-        "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
-        "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
-        "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
-        "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn"
-    },
+    "version": "0.0.0",
     "dependencies": {
         "@altas/ui": "workspace:*",
         "next": "^14.0.3",
@@ -26,5 +15,16 @@
         "@types/react": "^18.2.38",
         "@types/react-dom": "^18.2.17",
         "typescript": "^5.3.2"
+    },
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
+        "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+        "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+        "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+        "start": "next start",
+        "typecheck": "tsc --noEmit"
     }
 }

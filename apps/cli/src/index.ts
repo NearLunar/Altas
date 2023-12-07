@@ -1,33 +1,32 @@
 #!/usr/bin/env node
 import "@abraham/reflection";
+import { log } from "node:console";
+import { TRPCClientError, trpcProxyClient } from "@altas/adapter-trpc/client";
 import { Argument, program } from "commander";
-import type { LoggerFactory, LoggerPort } from "@altas/core";
-import { DI_LOGGER_FACTORY } from "@altas/core";
-import {
-    TestControllerInterfaceDI,
-    type TestControllerInterface,
-} from "~/controllers/test.controller";
-import { container } from "~/inversify";
 
-const loggerFactory = container.get<LoggerFactory>(DI_LOGGER_FACTORY);
-
-program.command("test").action(() => {
-    const logger: LoggerPort = loggerFactory("test");
-
-    logger.debug("Hello World!");
-    logger.info("Hello World!");
-    logger.warn("Hello World!");
-    logger.error("Hello World!");
+program.command("test").action(async () => {
+    log(await trpcProxyClient.hello.query());
+    trpcProxyClient.randomNumber.subscribe(undefined, {
+        onData: (data) => {
+            log(data);
+        },
+    });
 });
 
 program
     .command("scanip")
     .addArgument(new Argument("<address>", "IP address to scan"))
     .action(async (address: string) => {
-        const test = container.get<TestControllerInterface>(
-            TestControllerInterfaceDI,
+        log(
+            await trpcProxyClient.echo.query(address).catch((err) => {
+                if (err instanceof TRPCClientError) {
+                    return err.message;
+                }
+                return "Unknown error";
+            }),
         );
-        await test.execute(`Scanning ${address}`);
+        log("Done!");
+        process.exit(0);
     });
 
 program.parse(process.argv);
