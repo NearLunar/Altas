@@ -2,6 +2,10 @@
     "$schema": "https://turbo.build/schema.json",
     "globalDependencies": ["**/.env.*local"],
     "pipeline": {
+        "topo": {
+            "dependsOn": ["^topo"]
+        },
+
         "build": {
             "dependsOn": ["^build"],
             "outputs": [".next/**", "!.next/cache/**", "dist/**"]
@@ -11,13 +15,14 @@
             "persistent": true
         },
 
-        "topo": {
-            "dependsOn": ["^topo"]
-        },
-
         "typecheck": {
             "dependsOn": ["^topo"],
             "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+        },
+
+        "test": {
+            "dependsOn": ["^topo"],
+            "outputs": ["node_modules/.cache/jest"]
         },
 
         "//#lint": {

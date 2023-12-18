@@ -20,7 +20,9 @@
     "format:fix": "prettier . \"!apps/** !packages/** !tooling/** !core/** !infrastructure/**\" --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
     "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
     "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "test": "turbo run test",
     "postinstall": "husky install",
+    "syncpack": "syncpack",
     "studio": "turbo start:studio"
   }
 }
