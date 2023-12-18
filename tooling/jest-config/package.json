@@ -1,0 +1,13 @@
+{
+    "name": "@altas/jest-config",
+    "version": "0.0.0",
+    "devDependencies": {
+       "@altas/lint": "workspace:*",
+       "jest": "^29.7.0"
+    },
+    "files": [
+        "jest.js"
+    ],
+    "license": "MIT",
+    "private": true
+}

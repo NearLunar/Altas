@@ -24,6 +24,10 @@
             "dependsOn": ["^topo"],
             "outputs": ["node_modules/.cache/jest"]
         },
+        "test:watch": {
+            "dependsOn": ["^topo"],
+            "cache": false
+        },
 
         "//#lint": {
             "outputs": ["node_modules/.cache/.eslintcache"]
