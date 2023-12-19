@@ -4,3 +4,4 @@
 **/.expo
 tsup.config.ts
 package.json
+**/jest.config.js

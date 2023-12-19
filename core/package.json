@@ -10,6 +10,7 @@
     "devDependencies": {
         "@altas/lint": "workspace:*",
         "@altas/tsconfig": "workspace:*",
+        "@altas/jest-config": "workspace:*",
         "@types/node": "^20.9.4",
         "typescript": "^5.3.2"
     },
@@ -20,7 +21,9 @@
         "format:fix": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
         "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
         "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
-        "typecheck": "tsc --noEmit"
+        "typecheck": "tsc --noEmit",
+        "test": "jest --passWithNoTests",
+        "test:watch": "jest --watch --passWithNoTests"
     },
     "types": "src/index.ts"
 }
