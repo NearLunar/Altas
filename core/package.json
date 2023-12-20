@@ -22,8 +22,8 @@
         "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
         "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
         "typecheck": "tsc --noEmit",
-        "test": "jest --passWithNoTests",
-        "test:watch": "jest --watch --passWithNoTests"
+        "test": "jest --passWithNoTests --cacheDirectory 'node_modules/.cache/jest'",
+        "test:watch": "jest --watch --passWithNoTests --cacheDirectory 'node_modules/.cache/jest'"
     },
     "types": "src/index.ts"
 }
