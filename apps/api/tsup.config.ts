@@ -7,7 +7,7 @@ import { realpathSync } from "fs";
 const isWatch = process.env.WATCH === "true";
 const isDev = process.env.NODE_ENV !== "production";
 
-const tsupConfig = defineConfig((options) => {
+const tsupConfig = defineConfig(() => {
 
     return {
         entry: ["src/index.ts"],
