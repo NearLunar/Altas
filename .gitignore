@@ -42,3 +42,6 @@ local.db*
 
 # Build Artifact
 dist/
+
+# IntelliJ
+.idea/
