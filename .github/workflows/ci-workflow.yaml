@@ -11,11 +11,12 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install dependencies
-        run: pnpm install
+      - name: Use PNPM
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ^8.9.0
+          run_install: true
+          install_cache: 'local'
 
       - name: Run Typechecks
         run: pnpm turbo typecheck --continue
