@@ -1,4 +1,5 @@
 # Altas - Internet Safety Engine
+
 The Risk / Reputation Engine for the Internet, an easy to use multi-platform aggregator / heuristics engine for Domains,
 Emails and IPs.
 
@@ -13,20 +14,25 @@ Emails and IPs.
 8. [Contact](#contact)
 
 ## Why
+
 There is a massive issue concerning the presence of too many intelligence platforms for Domains, Emails, and IPs
 (Identity / Identities). Altas aims to fix this by aggregating and standardizing the
 data, to make it easy to understand. The engine seeks to develop a rewarded user-submission system that promotes user reporting and provides reliable first-party data to improve the accuracy of the risk scoring. All data will be subjected to a heuristic algorithm, allowing for both initial and evaluative measures of identity representation.
 
 ## Getting Started
+
 Describe prerequisites, how to get your project, and how to start it.
 
 ## Installation
+
 Gives instructions on how to install your project locally.
 
 ## Usage
+
 Shows examples and instructions on how to use your project, API & function usage and other configuration examples.
 
 ## Contributing
+
 Includes instructions on how to contribute. It's a good idea to open this section up to others, also make sure to show appreciation for your users' contributions to your project.
 
 ## License
@@ -60,7 +66,9 @@ Read the full license [here](LICENSE.md).
 
 
 ## Credits
+
 Acknowledges those who have contributed to your project.
 
 ## Contact
+
 How to reach you? Support, Troubleshooting, etc.
