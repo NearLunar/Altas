@@ -24,7 +24,7 @@ jobs:
           cache: "pnpm"
 
       - name: Install Dependencies
-        uses: pnpm install
+        run: pnpm install
 
       - name: Run Typechecks
         run: pnpm turbo typecheck --continue
