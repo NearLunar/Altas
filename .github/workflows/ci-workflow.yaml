@@ -16,13 +16,15 @@ jobs:
         uses: pnpm/action-setup@v2.0.1
         with:
           version: ^8.9.0
-          run_install: true
 
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: "pnpm"
+
+      - name: Install Dependencies
+        uses: pnpm install
 
       - name: Run Typechecks
         run: pnpm turbo typecheck --continue
