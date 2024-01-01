@@ -36,3 +36,6 @@ jobs:
 
       - name: Run tests
         run: pnpm test
+
+      - name: Dry Build
+        run: pnpm build
