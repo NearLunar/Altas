@@ -1,15 +1,16 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
 
       - name: Use PNPM
         uses: pnpm/action-setup@v2.0.1
@@ -17,6 +18,12 @@ jobs:
           version: ^8.9.0
           run_install: true
           install_cache: 'local'
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "pnpm"
 
       - name: Run Typechecks
         run: pnpm turbo typecheck --continue
