@@ -18,7 +18,7 @@
     "main": "expo-router/entry",
     "private": true,
     "scripts": {
-        "dev": "expo start --ios",
+        "dev": "expo start",
         "dev:android": "expo start --android",
         "dev:ios": "expo start --ios",
         "format": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",

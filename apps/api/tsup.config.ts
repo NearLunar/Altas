@@ -7,11 +7,11 @@ import { realpathSync } from "fs";
 const isWatch = process.env.WATCH === "true";
 const isDev = process.env.NODE_ENV !== "production";
 
-const tsupConfig = defineConfig((options) => {
+const tsupConfig = defineConfig(() => {
 
     return {
         entry: ["src/index.ts"],
-        onSuccess: "node dist/index.js",
+        onSuccess: isWatch ? "node dist/index.js" : undefined,
         watch: isWatch ? [
             ".",
             ...Object.keys(packageJson.dependencies).concat(Object.keys(packageJson.devDependencies)).filter((dep) => dep.startsWith("@altas")).map(
@@ -19,6 +19,7 @@ const tsupConfig = defineConfig((options) => {
             ),
         ] : undefined,
         clean: true,
+        sourcemap: isDev,
         minify: !isDev,
         noExternal: [/^@altas\/.*/],
     };
