@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet, Text } from "react-native";
 export default function App() {
     return (
         <SafeAreaView style={styles.container}>
-            <Text>Altas Mobile App Index.tsx</Text>
+            <Text>Altas Mobile App Home</Text>
         </SafeAreaView>
     );
 }

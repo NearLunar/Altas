@@ -14,8 +14,9 @@ export const appRouter = router({
 
         return observable((a) => {
             setInterval(() => {
-                a.next(`Random number: ${Math.round(Math.random() * 1000000)}`);
-            }, 100);
+                const num = Math.round(Math.random() * 1000000);
+                a.next(`Random number: ${num}`);
+            }, 0);
 
             return () => {
                 log("Unsubscribed");

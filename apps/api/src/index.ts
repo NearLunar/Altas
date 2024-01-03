@@ -22,11 +22,7 @@ void server.register(fastifyTRPCPlugin, {
 
 const main = async () => {
     server.log.info("Starting server...");
-    await server.listen({ port: 2999 }).then(() => {
-        server.log.info(
-            `Server listening at ${server.server.address()?.toString()}`,
-        );
-    });
+    await server.listen({ port: 2999 });
 };
 
 main().catch((err) => {
