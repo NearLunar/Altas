@@ -1,5 +1,0 @@
-.next
-**/*.yaml
-**/dist
-**/.expo
-tsup.config.ts

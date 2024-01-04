@@ -1,8 +1,0 @@
-{
-    "extends": "@altas/tsconfig/react-library.json",
-    "include": ["src", "turbo"],
-    "compilerOptions": {
-        "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo.json"
-    },
-    "exclude": ["dist", "build", "node_modules"]
-}
