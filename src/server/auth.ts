@@ -1,5 +1,9 @@
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { getServerSession, type DefaultSession, type NextAuthOptions } from "next-auth";
+import {
+    getServerSession,
+    type DefaultSession,
+    type NextAuthOptions,
+} from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 import type { Adapter } from "next-auth/adapters";
 import { env } from "@/env.mjs";

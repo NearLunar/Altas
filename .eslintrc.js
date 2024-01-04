@@ -43,7 +43,7 @@ module.exports = {
 
     overrides: [
         {
-            files: ["**/{layout,page}.tsx"],
+            files: ["**/{layout,page}.tsx", "**/*.config.*"],
             rules: {
                 "import/no-default-export": "off",
             },

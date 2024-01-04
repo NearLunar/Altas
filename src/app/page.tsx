@@ -11,7 +11,8 @@ export default async function Home() {
         <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
             <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
                 <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-                    Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
+                    Create <span className="text-[hsl(280,100%,70%)]">T3</span>{" "}
+                    App
                 </h1>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
                     <Link
@@ -21,7 +22,8 @@ export default async function Home() {
                     >
                         <h3 className="text-2xl font-bold">First Steps →</h3>
                         <div className="text-lg">
-                            Just the basics - Everything you need to know to set up your database and authentication.
+                            Just the basics - Everything you need to know to set
+                            up your database and authentication.
                         </div>
                     </Link>
                     <Link
@@ -31,7 +33,8 @@ export default async function Home() {
                     >
                         <h3 className="text-2xl font-bold">Documentation →</h3>
                         <div className="text-lg">
-                            Learn more about Create T3 App, the libraries it uses, and how to deploy it.
+                            Learn more about Create T3 App, the libraries it
+                            uses, and how to deploy it.
                         </div>
                     </Link>
                 </div>
@@ -40,11 +43,17 @@ export default async function Home() {
 
                     <div className="flex flex-col items-center justify-center gap-4">
                         <p className="text-center text-2xl text-white">
-                            {session ? <span>Logged in as {session.user.name}</span> : null}
+                            {session ? (
+                                <span>Logged in as {session.user.name}</span>
+                            ) : null}
                         </p>
                         <Link
                             className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-                            href={session ? "/api/auth/signout" : "/api/auth/signin"}
+                            href={
+                                session
+                                    ? "/api/auth/signout"
+                                    : "/api/auth/signin"
+                            }
                         >
                             {session ? "Sign out" : "Sign in"}
                         </Link>
@@ -66,7 +75,9 @@ async function CrudShowcase() {
     return (
         <div className="w-full max-w-xs">
             {latestPost ? (
-                <p className="truncate">Your most recent post: {latestPost.name}</p>
+                <p className="truncate">
+                    Your most recent post: {latestPost.name}
+                </p>
             ) : (
                 <p>You have no posts yet.</p>
             )}
