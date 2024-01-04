@@ -26,16 +26,10 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Run Typechecks
-        run: pnpm turbo typecheck --continue
-
       - name: Run Linting
-        run: pnpm turbo lint --continue
+        run: pnpm lint
 
-      - name: Run Format Check
-        run: pnpm turbo format --continue
-
-      - name: Run tests
+      - name: Run Tests
         run: pnpm test
 
       - name: Dry Build

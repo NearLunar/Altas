@@ -1,7 +1,0 @@
-packages:
-    - "apps/*"
-    - "packages/*"
-    - "core/"
-    - "tooling/*"
-    - "infrastructure/"
-    - "adapters/*"

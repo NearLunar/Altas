@@ -1,8 +1,0 @@
-{
-    "extends": "@altas/tsconfig/node.json",
-    "include": ["src"],
-    "exclude": ["node_modules", "dist"],
-    "compilerOptions": {
-        "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo.json"
-    }
-}
