@@ -23,13 +23,20 @@
         "@trpc/next": "^10.43.6",
         "@trpc/react-query": "^10.43.6",
         "@trpc/server": "^10.43.6",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
         "drizzle-orm": "^0.29.3",
+        "lucide-react": "^0.305.0",
         "next": "^14.0.4",
         "next-auth": "^4.24.5",
+        "nodemailer": "^6.9.8",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "server-only": "^0.0.1",
         "superjson": "^2.2.1",
+        "tailwind-merge": "^2.2.0",
+        "tailwindcss-animate": "^1.0.7",
+        "winston": "^3.11.0",
         "zod": "^3.22.4"
     },
     "devDependencies": {
@@ -50,6 +57,7 @@
         "eslint-config-next": "^14.0.4",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.2",
+        "husky": "^8.0.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "mysql2": "^3.6.1",
@@ -57,8 +65,7 @@
         "prettier": "^3.1.0",
         "prettier-plugin-tailwindcss": "^0.5.7",
         "tailwindcss": "^3.3.5",
-        "typescript": "^5.1.6",
-        "husky": "^8.0.0"
+        "typescript": "^5.1.6"
     },
     "ct3aMetadata": {
         "initVersion": "7.25.1"
