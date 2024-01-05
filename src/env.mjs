@@ -29,15 +29,11 @@ export const env = createEnv({
             // VERCEL_URL doesn't include `https` so it cant be validated as a URL
             process.env.VERCEL ? z.string() : z.string().url(),
         ),
-        DISCORD_CLIENT_ID: z.string(),
-        DISCORD_CLIENT_SECRET: z.string(),
+
+        EMAIL_SERVER: z.string().url(),
+        EMAIL_FROM: z.string().email(),
     },
 
-    /**
-     * Specify your client-side environment variables schema here. This way you can ensure the app
-     * isn't built with invalid env vars. To expose them to the client, prefix them with
-     * `NEXT_PUBLIC_`.
-     */
     client: {
         // NEXT_PUBLIC_CLIENTVAR: z.string(),
     },
@@ -53,8 +49,8 @@ export const env = createEnv({
         NEXTAUTH_URL: process.env.NEXTAUTH_URL,
         NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
 
-        DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
-        DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+        EMAIL_SERVER: process.env.EMAIL_SERVER,
+        EMAIL_FROM: process.env.EMAIL_FROM,
     },
     /**
      * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
