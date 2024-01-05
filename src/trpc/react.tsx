@@ -8,7 +8,7 @@ import {
 import { createTRPCReact } from "@trpc/react-query";
 import { useState } from "react";
 import { type AppRouter } from "@/server/api/root";
-import { getUrl, transformer } from "./shared";
+import { getTrpcUrl, transformer } from "./shared";
 
 export const api = createTRPCReact<AppRouter>();
 
@@ -28,7 +28,7 @@ export function TRPCReactProvider(props: {
                         (op.direction === "down" && op.result instanceof Error),
                 }),
                 httpBatchStreamLink({
-                    url: getUrl(),
+                    url: getTrpcUrl(),
                     headers() {
                         return {
                             cookie: props.cookies,

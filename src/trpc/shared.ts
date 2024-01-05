@@ -10,7 +10,7 @@ function getBaseUrl() {
     return `http://localhost:${process.env.PORT ?? 3000}`;
 }
 
-export function getUrl() {
+export function getTrpcUrl() {
     return `${getBaseUrl()}/api/trpc`;
 }
 
