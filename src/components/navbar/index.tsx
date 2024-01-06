@@ -1,10 +1,42 @@
 import type { FC } from "react";
+import Link from "next/link";
+import { ShieldIcon } from "lucide-react";
 
 export const Navbar: FC = () => {
     return (
-        <nav className="flex border-b px-6 h-16 items-center">
-            <span className="font-extrabold tracking-tight text-xl">Altas</span>
-            <div className="ml-auto flex items-center">Test</div>
-        </nav>
+        <header className="px-4 lg:px-6 h-14 flex items-center border-b">
+            <Link className="flex items-center justify-center" href="#">
+                <ShieldIcon className="h-6 w-6" />
+                <span className="ml-2 text-xl font-extrabold tracking-tight">
+                    Altas
+                </span>
+            </Link>
+            <nav className="ml-auto flex gap-4 sm:gap-6">
+                <Link
+                    className="text-sm font-medium hover:underline underline-offset-4"
+                    href="#"
+                >
+                    Features
+                </Link>
+                <Link
+                    className="text-sm font-medium hover:underline underline-offset-4"
+                    href="#"
+                >
+                    Pricing
+                </Link>
+                <Link
+                    className="text-sm font-medium hover:underline underline-offset-4"
+                    href="#"
+                >
+                    About
+                </Link>
+                <Link
+                    className="text-sm font-medium hover:underline underline-offset-4"
+                    href="#"
+                >
+                    Contact
+                </Link>
+            </nav>
+        </header>
     );
 };
