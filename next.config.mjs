@@ -4,7 +4,11 @@
  */
 await import("./src/env.mjs");
 
+const isProduction = process.env.NODE_ENV === "production"
+
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    swcMinify: isProduction
+};
 
 export default config;

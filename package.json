@@ -7,7 +7,7 @@
         "db:push": "drizzle-kit push:mysql",
         "db:studio": "drizzle-kit studio",
         "typecheck": "tsc --noEmit",
-        "dev": "next dev",
+        "dev": "next dev --turbo",
         "lint": "next lint",
         "test": "jest --passWithNoTests",
         "test:watch": "jest --watch",
@@ -17,6 +17,7 @@
     "dependencies": {
         "@auth/drizzle-adapter": "^0.3.6",
         "@planetscale/database": "^1.11.0",
+        "@radix-ui/react-slot": "^1.0.2",
         "@t3-oss/env-nextjs": "^0.7.1",
         "@tanstack/react-query": "^4.36.1",
         "@trpc/client": "^10.43.6",
