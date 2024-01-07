@@ -8,7 +8,7 @@ const isProduction = process.env.NODE_ENV === "production"
 
 /** @type {import("next").NextConfig} */
 const config = {
-    swcMinify: isProduction
+    swcMinify: true
 };
 
 export default config;

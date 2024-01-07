@@ -1,11 +1,12 @@
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import {
-    getServerSession,
     type DefaultSession,
+    getServerSession,
     type NextAuthOptions,
 } from "next-auth";
-import EmailProvider from "next-auth/providers/email";
 import type { Adapter } from "next-auth/adapters";
+import EmailProvider from "next-auth/providers/email";
+
 import { env } from "@/env.mjs";
 import { db } from "@/server/db";
 import { mysqlTable } from "@/server/db/schema";

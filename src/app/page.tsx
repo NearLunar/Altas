@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { HeroSection } from "@/app/_components/hero-section";
 import { FeatureSection } from "@/app/_components/feature-section";
+import { HeroSection } from "@/app/_components/hero-section";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
     return (
