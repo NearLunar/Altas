@@ -42,4 +42,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 
-/.idea
+/.idea/
