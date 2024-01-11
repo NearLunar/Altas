@@ -17,7 +17,7 @@ export default function Home() {
                             Hear from our satisfied customers.
                         </p>
                     </div>
-                    <div className="grid w-full grid-cols-1 lg:grid-cols-3 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
+                    <div className="grid w-full grid-cols-1 items-center justify-center gap-8 lg:grid-cols-3 lg:gap-12 [&>img]:mx-auto">
                         <Card>
                             <CardContent>
                                 <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal xl:text-2xl">

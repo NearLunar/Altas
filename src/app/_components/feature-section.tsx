@@ -5,7 +5,7 @@ import type { ComponentType, FC } from "react";
 
 export const FeatureSection: FC = () => {
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary text-secondary-foreground">
+        <section className="w-full bg-secondary py-12 text-secondary-foreground md:py-24 lg:py-32">
             <div className="container px-4 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-3 lg:gap-12 xl:grid-cols-3">
                     <Feature

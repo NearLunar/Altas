@@ -14,6 +14,7 @@ module.exports = {
             "@vercel/style-guide/eslint/react",
             "@vercel/style-guide/eslint/next",
         ].map((x) => require.resolve(x)),
+        "plugin:tailwindcss/recommended",
         "prettier",
     ],
     rules: {

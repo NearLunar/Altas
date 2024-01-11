@@ -3,11 +3,11 @@ import type { FC } from "react";
 
 export const Footer: FC = () => {
     return (
-        <footer className="w-full py-6 md:py-12 lg:py-16 bg-gray-100 dark:bg-gray-800">
+        <footer className="w-full bg-gray-100 py-6 md:py-12 lg:py-16 dark:bg-gray-800">
             <div className="container px-4 md:px-6 lg:px-8">
                 <div className="grid gap-6 md:grid-cols-3">
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Social</h3>
+                        <h3 className="mb-2 text-lg font-semibold">Social</h3>
                         <nav className="space-y-1">
                             <Link className="text-sm hover:underline" href="#">
                                 Twitter
@@ -24,7 +24,7 @@ export const Footer: FC = () => {
                         </nav>
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Company</h3>
+                        <h3 className="mb-2 text-lg font-semibold">Company</h3>
                         <nav className="space-y-1">
                             <Link className="text-sm hover:underline" href="#">
                                 About Us
@@ -41,7 +41,7 @@ export const Footer: FC = () => {
                         </nav>
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold mb-2">Info</h3>
+                        <h3 className="mb-2 text-lg font-semibold">Info</h3>
                         <nav className="space-y-1">
                             <Link className="text-sm hover:underline" href="#">
                                 Terms of Service
