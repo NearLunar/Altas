@@ -1,5 +1,6 @@
 import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
 import superjson from "superjson";
+
 import { type AppRouter } from "@/server/api/root";
 
 export const transformer = superjson;
@@ -10,7 +11,7 @@ function getBaseUrl() {
     return `http://localhost:${process.env.PORT ?? 3000}`;
 }
 
-export function getUrl() {
+export function getTrpcUrl() {
     return `${getBaseUrl()}/api/trpc`;
 }
 
