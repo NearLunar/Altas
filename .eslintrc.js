@@ -5,7 +5,7 @@ const project = resolve(__dirname, "tsconfig.json");
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
     root: true,
-    plugins: ["prettier"],
+    plugins: ["unused-imports", "simple-import-sort", "prettier"],
     extends: [
         ...[
             "@vercel/style-guide/eslint/node",
@@ -14,10 +14,27 @@ module.exports = {
             "@vercel/style-guide/eslint/react",
             "@vercel/style-guide/eslint/next",
         ].map((x) => require.resolve(x)),
+        "plugin:tailwindcss/recommended",
         "prettier",
     ],
     rules: {
+        "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                vars: "all",
+                varsIgnorePattern: "^_",
+                args: "after-used",
+                argsIgnorePattern: "^_",
+            },
+        ],
+        // Need to Disable 'import/order' for simple-import-sort
+        "import/order": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
         "prettier/prettier": "error",
+        "react/function-component-definition": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/sort-type-constituents": "warn",
         "@typescript-eslint/no-unsafe-assignment": "off",

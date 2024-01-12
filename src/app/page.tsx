@@ -1,88 +1,78 @@
-import Link from "next/link";
-import { CreatePost } from "@/app/_components/create-post";
-import { getServerAuthSession } from "@/server/auth";
-import { api } from "@/trpc/server";
+import { FeatureSection } from "@/app/_components/feature-section";
+import { HeroSection } from "@/app/_components/hero-section";
+import { Card, CardContent } from "@/components/ui/card";
 
-export default async function Home() {
-    const hello = await api.post.hello.query({ text: "from tRPC" });
-    const session = await getServerAuthSession();
-
+export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-            <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-                <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-                    Create <span className="text-[hsl(280,100%,70%)]">T3</span>{" "}
-                    App
-                </h1>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-                    <Link
-                        className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-                        href="https://create.t3.gg/en/usage/first-steps"
-                        target="_blank"
-                    >
-                        <h3 className="text-2xl font-bold">First Steps →</h3>
-                        <div className="text-lg">
-                            Just the basics - Everything you need to know to set
-                            up your database and authentication.
-                        </div>
-                    </Link>
-                    <Link
-                        className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-                        href="https://create.t3.gg/en/introduction"
-                        target="_blank"
-                    >
-                        <h3 className="text-2xl font-bold">Documentation →</h3>
-                        <div className="text-lg">
-                            Learn more about Create T3 App, the libraries it
-                            uses, and how to deploy it.
-                        </div>
-                    </Link>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                    <p className="text-2xl text-white">{hello.greeting}</p>
-
-                    <div className="flex flex-col items-center justify-center gap-4">
-                        <p className="text-center text-2xl text-white">
-                            {session ? (
-                                <span>Logged in as {session.user.name}</span>
-                            ) : null}
+        <main className="flex-1">
+            <HeroSection />
+            <FeatureSection />
+            <section className="w-full py-12 md:py-24 lg:py-32">
+                <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+                    <div className="space-y-3">
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                            Testimonials
+                        </h2>
+                        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                            Hear from our satisfied customers.
                         </p>
-                        <Link
-                            className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-                            href={
-                                session
-                                    ? "/api/auth/signout"
-                                    : "/api/auth/signin"
-                            }
-                        >
-                            {session ? "Sign out" : "Sign in"}
-                        </Link>
+                    </div>
+                    <div className="grid w-full grid-cols-1 items-center justify-center gap-8 lg:grid-cols-3 lg:gap-12 [&>img]:mx-auto">
+                        <Card>
+                            <CardContent>
+                                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal xl:text-2xl">
+                                    “Altas has been a game changer for our
+                                    company. The risk analysis is top-notch and
+                                    has helped us secure our digital assets.“
+                                </blockquote>
+                                <div>
+                                    <div className="font-semibold">
+                                        John Doe
+                                    </div>
+                                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                                        CEO, XYZ Corp
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card>
+                            <CardContent>
+                                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal xl:text-2xl">
+                                    “We&apos;ve been using Altas for a year now
+                                    and it&apos;s been a great experience. The
+                                    insights provided by the tool are
+                                    invaluable.“
+                                </blockquote>
+                                <div>
+                                    <div className="font-semibold">
+                                        Jane Smith
+                                    </div>
+                                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                                        CTO, ABC Inc
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card>
+                            <CardContent>
+                                <blockquote className="text-lg font-semibold leading-snug lg:text-xl lg:leading-normal xl:text-2xl">
+                                    “Altas is a must-have tool for any company
+                                    that values their digital security. Highly
+                                    recommended!“
+                                </blockquote>
+                                <div>
+                                    <div className="font-semibold">
+                                        Robert Johnson
+                                    </div>
+                                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                                        Security Officer, DEF Ltd
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
                 </div>
-
-                <CrudShowcase />
-            </div>
+            </section>
         </main>
-    );
-}
-
-async function CrudShowcase() {
-    const session = await getServerAuthSession();
-    if (!session?.user) return null;
-
-    const latestPost = await api.post.getLatest.query();
-
-    return (
-        <div className="w-full max-w-xs">
-            {latestPost ? (
-                <p className="truncate">
-                    Your most recent post: {latestPost.name}
-                </p>
-            ) : (
-                <p>You have no posts yet.</p>
-            )}
-
-            <CreatePost />
-        </div>
     );
 }
