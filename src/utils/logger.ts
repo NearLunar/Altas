@@ -1,17 +1,12 @@
-import "server-only";
-
+// Setup Winston logger
 import { createLogger, format, transports } from "winston";
 
 export const logger = createLogger({
     level: "info",
-    format: format.combine(
-        format.colorize(),
-        format.timestamp({
-            format: "YYYY-MM-DD HH:mm:ss",
+    format: format.combine(format.timestamp(), format.json()),
+    transports: [
+        new transports.Console({
+            format: format.combine(format.colorize(), format.simple()),
         }),
-        format.printf(
-            (info) => `${info.timestamp} ${info.level}: ${info.message}`,
-        ),
-    ),
-    transports: [new transports.Console()],
+    ],
 });
