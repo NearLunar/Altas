@@ -10,11 +10,8 @@ module.exports = {
         ...[
             "@vercel/style-guide/eslint/node",
             "@vercel/style-guide/eslint/typescript",
-            "@vercel/style-guide/eslint/browser",
-            "@vercel/style-guide/eslint/react",
-            "@vercel/style-guide/eslint/next",
+            "@vercel/style-guide/eslint/jest",
         ].map((x) => require.resolve(x)),
-        "plugin:tailwindcss/recommended",
         "prettier",
     ],
     rules: {
@@ -42,10 +39,6 @@ module.exports = {
         "@typescript-eslint/no-unsafe-call": "off",
     },
 
-    globals: {
-        React: true,
-    },
-
     parserOptions: {
         project,
     },
@@ -60,7 +53,7 @@ module.exports = {
 
     overrides: [
         {
-            files: ["**/{layout,page}.tsx", "**/*.config.*"],
+            files: ["**/*.config.*"],
             rules: {
                 "import/no-default-export": "off",
             },

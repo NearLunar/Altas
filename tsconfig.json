@@ -16,8 +16,6 @@
 
         /* Bundled projects */
         "lib": [
-            "dom",
-            "dom.iterable",
             "ES2022"
         ],
         "noEmit": true,
@@ -37,17 +35,22 @@
             "@/*": [
                 "./src/*"
             ]
-        }
+        },
+
+        // Add Jest types to tsconfig
+        "types": [
+            "jest"
+        ],
+
+
     },
     "include": [
         ".eslintrc.js",
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.cjs",
-        "**/*.mjs",
-        "**/*.js",
-        ".next/types/**/*.ts"
+        "src/**/*.ts",
+        "src/**/*.cjs",
+        "src/**/*.mjs",
+        "src/**/*.js",
+        "tests/**/*.ts",
     ],
     "exclude": [
         "node_modules"
