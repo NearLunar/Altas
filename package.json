@@ -12,10 +12,12 @@
         "lint": "eslint --ext .ts src/",
         "test": "jest --passWithNoTests",
         "test:watch": "jest --watch --passWithNoTests",
+        "test:coverage": "jest --coverage",
         "start": "node dist/index.js",
         "prepare": "husky install"
     },
     "dependencies": {
+        "@paralleldrive/cuid2": "^2.2.2",
         "@planetscale/database": "^1.11.0",
         "@t3-oss/env-core": "^0.8.0",
         "cookie-parser": "^1.4.6",
