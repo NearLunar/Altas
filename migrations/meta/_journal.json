@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1707077449152,
+      "tag": "0000_flawless_richard_fisk",
+      "breakpoints": true
+    }
+  ]
+}
