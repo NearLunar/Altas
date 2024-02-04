@@ -4,7 +4,8 @@
     "private": true,
     "scripts": {
         "build": "tsup src/index.ts",
-        "db:push": "drizzle-kit push:mysql",
+        "db:generate": "drizzle-kit generate:mysql",
+        "db:deploy": "tsx ./src/drizzle/migrate.ts",
         "db:studio": "drizzle-kit studio",
         "db:connect": "pscale connect altas develop --org nearlunar --port 3309",
         "typecheck": "tsc --noEmit",
@@ -49,12 +50,13 @@
         "eslint-plugin-unused-imports": "^3.0.0",
         "husky": "^8.0.0",
         "jest": "^29.7.0",
-        "mysql2": "^3.6.1",
+        "mysql2": "^3.6.5",
         "nodemon": "^3.0.3",
         "prettier": "^3.1.0",
         "supertest": "^6.3.4",
         "ts-node": "^10.9.2",
         "tsup": "^8.0.1",
+        "tsx": "^3.0.1",
         "typescript": "^5.1.6"
     },
     "packageManager": "pnpm@8.10.5"
