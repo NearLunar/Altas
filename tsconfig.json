@@ -51,6 +51,7 @@
         "src/**/*.mjs",
         "src/**/*.js",
         "tests/**/*.ts",
+        "*.config.*"
     ],
     "exclude": [
         "node_modules"

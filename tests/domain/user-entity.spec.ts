@@ -1,6 +1,6 @@
 import { UserEntity } from "@/domain/user-entity";
 
-describe("user entity", () => {
+describe("schema entity", () => {
     it("shouldn't fail on initialization", () => {
         expect(
             () =>
