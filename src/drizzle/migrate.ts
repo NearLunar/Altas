@@ -1,9 +1,14 @@
 import path from "node:path";
 
-import { migrate } from "drizzle-orm/mysql2/migrator";
+import { drizzle } from "drizzle-orm/postgres-js";
+import { migrate } from "drizzle-orm/postgres-js/migrator";
+import postgres from "postgres";
 
-import { db } from "@/drizzle/index";
+import { env } from "@/env";
 import { logger } from "@/utils/logger";
+
+const connection = postgres(env.DATABASE_URL, { max: 1 });
+const db = drizzle(connection);
 
 const migrationPath = path.join(__dirname, "../../migrations");
 
