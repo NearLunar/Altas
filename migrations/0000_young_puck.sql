@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS "users" (
+	"id" varchar(255) PRIMARY KEY NOT NULL
+);

@@ -1,0 +1,31 @@
+{
+  "id": "44c7a310-524d-4498-a691-3899d336f171",
+  "prevId": "324ee1a5-ef44-4c12-97d8-8399ca790656",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "altas_users": {
+      "name": "altas_users",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(255)",
+          "primaryKey": true,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
