@@ -5,15 +5,17 @@ import { argon2id, argon2Verify } from "hash-wasm";
 
 import type { HashingServiceInterface } from "@/services/hashing/hashing-service-interface";
 
+const parallelism = os.cpus().length;
+
 export class Argon2HashingService implements HashingServiceInterface {
     async hashString(input: string, salt?: string): Promise<string> {
         return argon2id({
             password: input,
-            salt: salt ?? crypto.randomBytes(16).toString("hex"),
-            parallelism: os.cpus().length,
-            iterations: 8,
-            memorySize: 1024 * 64,
-            hashLength: 16 * 8,
+            salt: salt ?? crypto.randomBytes(128).toString("hex"),
+            parallelism,
+            iterations: 4,
+            memorySize: 1024 * 32,
+            hashLength: 128 * 2,
             outputType: "encoded",
         });
     }
