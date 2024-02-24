@@ -2,15 +2,20 @@ import { z } from "zod";
 
 import { BaseEntity } from "@/abstracts/base-entity";
 
+export enum UserRole {
+    ADMIN = "admin",
+    USER = "user",
+}
+
 export interface UserEntityProps {
     name: string;
     email: string;
     password: string;
-    role: string;
+    role: UserRole;
 }
 
 export class UserEntity extends BaseEntity<UserEntityProps> {
-    validate() {
+    validate(): void {
         // Validate name
         const nameValidation = z.string().min(1).max(255);
         try {

@@ -1,4 +1,4 @@
-import { UserEntity } from "@/domain/user-entity";
+import { UserEntity, UserRole } from "@/domain/entities/user-entity";
 
 describe("schema entity", () => {
     it("shouldn't fail on initialization", () => {
@@ -9,7 +9,7 @@ describe("schema entity", () => {
                         name: "Test User",
                         email: "test@test.com",
                         password: "asdfkja;sldkfyiaey",
-                        role: "admin",
+                        role: UserRole.ADMIN,
                     },
                 }),
         ).not.toThrow();
@@ -23,7 +23,7 @@ describe("schema entity", () => {
                         name: "",
                         email: "test@test.com",
                         password: "asdfkja;sldkfyiaey",
-                        role: "admin",
+                        role: UserRole.ADMIN,
                     },
                 }),
         ).toThrow("Invalid Name");
@@ -37,7 +37,7 @@ describe("schema entity", () => {
                         name: "Test User",
                         email: "",
                         password: "asdfkja;sldkfyiaey",
-                        role: "admin",
+                        role: UserRole.ADMIN,
                     },
                 }),
         ).toThrow("Invalid Email");
@@ -49,7 +49,7 @@ describe("schema entity", () => {
                         name: "Test User",
                         email: "asdfa@asdfas.",
                         password: "asdfkja;sldkfyiaey",
-                        role: "admin",
+                        role: UserRole.ADMIN,
                     },
                 }),
         ).toThrow("Invalid Email");
@@ -63,7 +63,7 @@ describe("schema entity", () => {
                         name: "Test User",
                         email: "test@test.com",
                         password: "",
-                        role: "admin",
+                        role: UserRole.ADMIN,
                     },
                 }),
         ).toThrow("Invalid Password");
@@ -75,7 +75,7 @@ describe("schema entity", () => {
                         name: "Test User",
                         email: "test@test.com",
                         password: "a".repeat(256),
-                        role: "admin",
+                        role: UserRole.ADMIN,
                     },
                 }),
         ).toThrow("Invalid Password");
