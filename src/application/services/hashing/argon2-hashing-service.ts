@@ -3,11 +3,16 @@ import * as os from "node:os";
 
 import { argon2id, argon2Verify } from "hash-wasm";
 
-import type { HashingServiceInterface } from "@/services/hashing/hashing-service-interface";
+import type { HashingServiceInterface } from "@/application/services/hashing/hashing-service-interface";
+import { logger } from "@/utils/logger";
 
 const parallelism = os.cpus().length;
 
 export class Argon2HashingService implements HashingServiceInterface {
+    constructor() {
+        logger.info("Using Argon2 as hashing algorithm");
+    }
+
     async hashString(input: string, salt?: string): Promise<string> {
         return argon2id({
             password: input,

@@ -1,4 +1,4 @@
-import { Argon2HashingService } from "@/services/hashing/argon2-hashing-service";
+import { Argon2HashingService } from "@/application/services/hashing/argon2-hashing-service";
 
 describe("argon2-hashing-service", () => {
     let hashingService: Argon2HashingService;
