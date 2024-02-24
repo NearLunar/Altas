@@ -6,7 +6,7 @@
         "build:docker": "docker build -t altas .",
         "build": "tsup src/index.ts",
         "db:generate": "drizzle-kit generate:pg",
-        "db:deploy": "tsx ./src/drizzle/migrate.ts",
+        "db:deploy": "tsx src/infrastructure/drizzle/migrate.ts",
         "db:studio": "drizzle-kit studio",
         "typecheck": "tsc --noEmit",
         "dev": "nodemon --watch src --ext ts --exec 'npm run build -- --silent && npm run start'",
