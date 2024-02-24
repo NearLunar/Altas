@@ -5,4 +5,4 @@ import { env } from "@/env";
 
 export const connection = postgres(env.DATABASE_URL);
 
-export const db = drizzle(connection);
+export const drizzleDB = drizzle(connection);

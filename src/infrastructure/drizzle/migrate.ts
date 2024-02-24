@@ -10,9 +10,9 @@ import { logger } from "@/utils/logger";
 const connection = postgres(env.DATABASE_URL, { max: 1 });
 const db = drizzle(connection);
 
-const migrationPath = path.join(__dirname, "../../migrations");
+const migrationPath = path.join(__dirname, "../../../migrations");
 
-const main = async () => {
+const main = async (): Promise<void> => {
     logger.info("Migrating...", migrationPath);
 
     await migrate(db, {
