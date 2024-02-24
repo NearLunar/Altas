@@ -10,7 +10,12 @@ const devFormat = format.combine(
     format.timestamp(),
     format.simple(),
     format.printf((info) => {
-        const { timestamp, level, message, ...args } = info;
+        const { timestamp, level, message, ...args } = info as {
+            timestamp: string;
+            level: string;
+            message: string;
+            [key: string]: unknown;
+        };
 
         const ts = timestamp.slice(0, 19).replace("T", " ");
         return `${ts} [${level}]: ${message.trim()} ${
