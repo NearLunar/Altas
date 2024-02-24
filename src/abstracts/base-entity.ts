@@ -18,7 +18,7 @@ export type CreateEntityData<EntityProps = unknown> =
 
 export abstract class BaseEntity<EntityProps> {
     // Base Entity Properties
-    private readonly id: EntityId;
+    private readonly _id: EntityId;
     private readonly _createdAt: Date;
     private _updatedAt: Date;
 
@@ -27,7 +27,7 @@ export abstract class BaseEntity<EntityProps> {
     constructor(data: CreateEntityData<EntityProps>) {
         logger.debug("Creating base entity", data);
 
-        this.id = data.id || createId();
+        this._id = data.id || createId();
         const now = new Date();
         this._createdAt = data.createdAt || now;
         this._updatedAt = data.updatedAt || now;
@@ -42,17 +42,21 @@ export abstract class BaseEntity<EntityProps> {
         this.validate();
     }
 
-    get createdAt() {
+    get id(): EntityId {
+        return this._id;
+    }
+
+    get createdAt(): Date {
         return this._createdAt;
     }
 
-    get updatedAt() {
+    get updatedAt(): Date {
         return this._updatedAt;
     }
 
     get props(): BaseEntityData & EntityProps {
         return {
-            id: this.id,
+            id: this._id,
             createdAt: this.createdAt,
             updatedAt: this.updatedAt,
             ...this._props,
@@ -63,7 +67,7 @@ export abstract class BaseEntity<EntityProps> {
         // Validate ID is a CUID
         const idValidation = z.string().min(1).cuid2();
         try {
-            idValidation.parse(this.id);
+            idValidation.parse(this._id);
         } catch (error) {
             if (error instanceof z.ZodError) {
                 throw new Error(`Invalid ID: ${error.message}`);

@@ -1,7 +1,7 @@
 import { BaseEntity } from "@/abstracts/base-entity";
 
 class TestEntity extends BaseEntity<unknown> {
-    validate() {
+    validate(): void {
         // Do nothing
     }
 }
