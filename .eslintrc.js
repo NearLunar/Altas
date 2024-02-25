@@ -31,12 +31,13 @@ module.exports = {
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error",
         "prettier/prettier": "error",
-        "react/function-component-definition": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/sort-type-constituents": "warn",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
+        "jest/expect-expect": [
+            "error",
+            {
+                assertFunctionNames: ["expect", "**.expect"],
+                additionalTestBlockFunctions: [],
+            },
+        ],
     },
 
     parserOptions: {

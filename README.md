@@ -17,7 +17,7 @@ Emails and IPs.
 
 There is a massive issue concerning the presence of too many intelligence platforms for Domains, Emails, and IPs
 (Identity / Identities). Altas aims to fix this by aggregating and standardizing the
-data, to make it easy to understand. The engine seeks to develop a rewarded user-submission system that promotes user reporting and provides reliable first-party data to improve the accuracy of the risk scoring. All data will be subjected to a heuristic algorithm, allowing for both initial and evaluative measures of identity representation.
+data, to make it easy to understand. The engine seeks to develop a rewarded schema-submission system that promotes schema reporting and provides reliable first-party data to improve the accuracy of the risk scoring. All data will be subjected to a heuristic algorithm, allowing for both initial and evaluative measures of identity representation.
 
 ## Getting Started
 

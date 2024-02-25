@@ -50,7 +50,8 @@
         "src/**/*.cjs",
         "src/**/*.mjs",
         "src/**/*.js",
-        "tests/**/*.ts",
+        "e2e/**/*.ts",
+        "*.config.*"
     ],
     "exclude": [
         "node_modules"

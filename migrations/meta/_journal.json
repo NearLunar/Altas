@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1707599858149,
+      "tag": "0000_young_puck",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1707600867818,
+      "tag": "0001_icy_lilandra",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1707602175163,
+      "tag": "0002_confused_elektra",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1708813658302,
+      "tag": "0003_complete_penance",
+      "breakpoints": true
+    }
+  ]
+}
