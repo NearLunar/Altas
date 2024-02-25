@@ -3,7 +3,7 @@ import * as os from "node:os";
 
 import { argon2id, argon2Verify } from "hash-wasm";
 
-import type { HashingServiceInterface } from "@/application/services/hashing/hashing-service-interface";
+import type { HashingServiceInterface } from "@/application/hashing/hashing-service-interface";
 import { logger } from "@/utils/logger";
 
 const parallelism = os.cpus().length;

@@ -1,5 +1,5 @@
-import { Argon2HashingService } from "@/application/services/hashing/argon2-hashing-service";
-import type { HashingServiceInterface } from "@/application/services/hashing/hashing-service-interface";
+import { Argon2HashingService } from "@/application/hashing/argon2-hashing-service";
+import type { HashingServiceInterface } from "@/application/hashing/hashing-service-interface";
 import type { UserRepositoryInterface } from "@/domain/repositories/user-repository-interface";
 import { drizzleDB } from "@/infrastructure/drizzle";
 import { DrizzleUserRepository } from "@/infrastructure/repositories/drizzle-user-repository";
